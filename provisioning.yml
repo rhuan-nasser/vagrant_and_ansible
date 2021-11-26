@@ -1,0 +1,29 @@
+---
+- hosts: banco
+  tasks:
+    - name: "Instalando o postgresql"
+      apt:
+        name: "{{item}}"
+        state: latest
+      become: yes
+      with_items:
+        - postgresql
+        - sysstat
+        - net-tools
+
+
+- hosts: apache
+  tasks:
+    - name: "Instalando o apache"
+      apt:
+        name: "{{item}}"
+        state: latest
+      become: yes
+      with_items:
+        - apache2
+        - sysstat
+        - net-tools
+
+
+# tasks
+#   - shell: "comando-do-shell"

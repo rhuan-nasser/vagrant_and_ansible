@@ -1,0 +1,3 @@
+ansible {nome do grupo} -u {usuário} -i {arq. de inventário} -m {modulo usado, ex: shell}
+
+ansible wordpress -u vagrant -i hosts -m shell -a "echo Hello World!"
